@@ -1,7 +1,9 @@
 import {Component, Input, OnInit, AfterViewInit, ViewChild} from '@angular/core';
 import {LhcDataService} from '../../lib/lhc-data.service';
 import {NzDatePickerComponent} from "ng-zorro-antd/date-picker";
-import {CommonUtilsService} from "../../lib/common-utils.service";
+import { CommonUtilsService } from "../../lib/common-utils.service";
+import { it_IT } from "ng-zorro-antd/i18n";
+import { NzI18nService } from "ng-zorro-antd/i18n";
 
 @Component({
   selector: 'lhc-item-date',
@@ -17,7 +19,8 @@ export class LhcItemDateComponent implements AfterViewInit {
 
   constructor(
     public lhcDataService: LhcDataService,
-    private commonUtilsService: CommonUtilsService
+    private commonUtilsService: CommonUtilsService,
+    private i18n: NzI18nService
   ) {}
 
 
@@ -31,7 +34,9 @@ export class LhcItemDateComponent implements AfterViewInit {
       this.commonUtilsService.getAriaLabel(this.item)
     );
   }
-
+  ngOnInit() {
+    this.i18n.setLocale(it_IT);
+  }
   /**
    * model change event handler
    * @param value the new date/time

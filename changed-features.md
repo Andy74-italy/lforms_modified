@@ -5,9 +5,9 @@
   * **questionnaire** - A JSON object of a FHIR Questionnaire (including FHIR SDC Questionnaire),
  or the above LHC-Forms internal format.
   * **options** - Optional, a JSON object. The options defined in [templateOptions](#templateOptions).
-  * **prepop** - Optional, a boolean value. A flag indicating whether to run the pre-populate operation
+  * **prepop** - Optional, un valore booleano value. A flag indicating whether to run the pre-populate operation
  for the FHIR Questionnaire. The default value is false.
-  * **fhirVersion** - Optional, a string value. The specified FHIR version of the data provided in 
+  * **fhirVersion** - Optional, un valore di tipo stringa . The specified FHIR version of the data provided in 
  'questionnaire'. If this is not provided, a FHIR version will be determined from 
  the 'questionnaire'. The supported FHIR versions are 'R4' and 'STU3'.
 
@@ -37,22 +37,24 @@
 * **AngularJS Directive** The new LHC-Forms does not includes an AngujarJS directive.
 
 * **templateOptions** - The following options within templateOptions are not supported:
-  * showColumnHeaders - a boolean that controls whether to show the header row
+  * showColumnHeaders - un valore booleano that controls whether to show the header row
       with the "Name", "Value", and "Unit" column labels.  The default is true.
-  * tabOnInputFieldsOnly - a boolean that controls whether to control TAB keys
+  * showQuestionCode - un valore booleano that controls whether to show question codes.
+      The default is false.
+  * tabOnInputFieldsOnly - un valore booleano that controls whether to control TAB keys
       to stop on the input fields only (neither buttons, nor units fields).
       The default is false.
-  * hideFormControls - a boolean that controls whether to hide the controls section
+  * hideFormControls - un valore booleano that controls whether to hide the controls section
       on top of the form. The default is true.
-  * hideUnits - a boolean that controls whether to all the Units column to
+  * hideUnits - un valore booleano that controls whether to all the Units column to
       be hidden from the data table. The default is false.
-  * showFormOptionPanel - a boolean that controls whether to show the option panel
+  * showFormOptionPanel - un valore booleano that controls whether to show the option panel
       that displays all the form options.
-  * showFormOptionPanelButton - a boolean that controls whether to show the button
+  * showFormOptionPanelButton - un valore booleano that controls whether to show the button
       next to the form title that hides/shows the form options panel.
-  * useAnimation - a boolean that controls whether to use animation on the form.
+  * useAnimation - un valore booleano that controls whether to use animation on the form.
       The default is true.
-  * <a name="showFormHeader"></a>showFormHeader - a boolean that controls whether to
+  * <a name="showFormHeader"></a>showFormHeader - un valore booleano that controls whether to
       show a row fields above the actual form like "Date Date", "Comment", etc.
       The default is false.
   * formHeaderItems - an array defining fields above the form (see

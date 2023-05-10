@@ -370,8 +370,8 @@ const LhcHL7 = {
     return rtn;
   },
 
-  _DT_FMT: 'YYYYMMDD',
-  _DTM_FMT: 'YYYYMMDDHHmmss',
+  _DT_FMT: 'DDMMYYYY',
+  _DTM_FMT: 'DDMMYYYYHHmmss',
   /**
    * Convert an item to one or more HL7 v2 OBX records.
    * @param item an item in LForms form data

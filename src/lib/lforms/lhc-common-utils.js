@@ -8,25 +8,22 @@ import deepEqual from "deep-equal";
 const CommonUtils = {
 
 // Acceptable date formats
+// N.R. MODFICA PER FORMATO ITALIANO
 
 // Strict parsing -
   parseDateFormats : [
-    'M/D/YYYY',
-    'M/D/YY',
-    'M/D',
-    'M-D-YYYY',
-    'M-D-YY',
-    'M-D',
-    'YYYY',
-    'YYYY-M-D',
-    'YYYY/M/D',
-    moment.ISO_8601,
-    'M/D/YYYY HH:mm',
-    'M/D/YY HH:mm',
-    'M/D HH:mm',
-    'M-D-YYYY HH:mm',
-    'M-D-YY HH:mm',
-    'M-D HH:mm',
+    'D/M/YYYY',
+    'D/M/YY',
+    'D/M',
+    'D/M/YYYY',
+    'D/M/YY',
+    'D/M',    
+    'D/M/YYYY HH:mm',
+    'D/M/YY HH:mm',
+    'D/M HH:mm',
+    'D/M/YYYY HH:mm',
+    'D/M/YY HH:mm',
+    'D/M HH:mm',
   ],
 
   intRegex: /^\s*(\+|-)?\d+\s*$/,
@@ -78,22 +75,24 @@ const CommonUtils = {
    * off by a day during either way of conversion depending on the time zone the code is executed.
    * The solution here is to keep the literal values of the year, month, and date components remain
    * unchanged regardless of the time zones.
-   * Convert the given date object into a DT type date string, in "yyyy-mm-dd" format, where the
+   * N.R. MODIFICA ITALIANO 
+   * Convert the given date object into a DT type date string, in "dd/mm/yyyy" format, where the
    * year, month, and date are based on the "local time zone" as the users can see on the display.
    * @param dateObj the date object to be converted.
-   * @return date string in yyyy-mm-dd format with year, month, and date values corresponding to that
+   * @return date string in dd/mm/yyyy format with year, month, and date values corresponding to that
    * at the local timezone.
    */
   dateToDTStringISO: function(dateObj) {
-    return (! dateObj || !(dateObj instanceof Date) || isNaN(dateObj.getTime()))? undefined: [
-      (10000 + dateObj.getFullYear()).toString().substr(1),
+    return (! dateObj || !(dateObj instanceof Date) || isNaN(dateObj.getTime()))? undefined: [   
+      (100 + dateObj.getDate()).toString().substr(1),
       (101 + dateObj.getMonth()).toString().substr(1),
-      (100 + dateObj.getDate()).toString().substr(1) ].join('-');
+      (10000 + dateObj.getFullYear()).toString().substr(1)].join('/');
   },
 
 
   /**
-   * Parse the given iso date string, that is, a string of format "yyyy[-mm[-dd]]", into a Date object,
+   * Parse the given iso date string, that is, a string of format "dd/mm/yyyy", into a Date object,
+   * N.R. MODIFICA ITALIANO
    * and then, adjust the year, month, and day so that when displayed (as local date) the literal values of
    * the year, month, and date components remain unchanged.
    * See the comments/docs for function dateToDTStringISO().
@@ -101,12 +100,13 @@ const CommonUtils = {
    */
   stringToDTDateISO: function(isoDateString) {
     var d = new Date(isoDateString);
-    return isNaN(d.getTime())? undefined: new Date(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+    return isNaN(d.getTime()) ? undefined : new Date(d.getUTCDate(), d.getUTCMonth(), d.getUTCFullYear());
   },
 
   /**
    * Get a formatted date string from a date object
    * for example: "2016-10-31T14:42:12Z"
+   * N.R. da verificare 
    * @param objDate a date object, or a valid string representation of date.
    * @returns a formatted date string
    */

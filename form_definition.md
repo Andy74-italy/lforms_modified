@@ -80,14 +80,14 @@ about the meaning of each key:
   'table' (default) is the only template supported. More supported templates would be added.
 * <a name="templateOptions"></a>**templateOptions** - a hash of options for the template.  This can be
   omitted, but supported values are below.
-    * showQuestionCode - a boolean that controls whether to show question codes.
+    * showQuestionCode - un valore booleano that controls whether to show question codes.
       The default is false.
-    * showCodingInstruction - a boolean that controls whether to show coding
+    * showCodingInstruction - un valore booleano that controls whether to show coding
       instructions inline or as popover messages (false: in popover; true: inline).
       The default is false;
-    * allowMultipleEmptyRepeatingItems - a boolean that controls whether to allow
+    * allowMultipleEmptyRepeatingItems - un valore booleano that controls whether to allow
       more than one unused repeating item/section The default is false.
-    * allowHTMLInInstructions - a boolean that controls whether to allow HTML
+    * allowHTMLInInstructions - un valore booleano that controls whether to allow HTML
       content in the codingInstructions field. The default is false. If it is false,
       the **codingInstructionsFormat** field on item level is ignored, and no HTML
       formatted coding instructions will be displayed.
@@ -120,12 +120,12 @@ about the meaning of each key:
       "columns" is valid only when "type" is set to be "RADIO_CHECKBOX".
       Here is an example:
       `{"answerLayout": {"type": "RADIO_CHECKBOX", "columns": "1"}}`
-    * hideTreeLine - a boolean that controls whether to hide tree line styles. The default is false.
-    * hideIndentation - a boolean that controls whether to hide indentation. The default is false.
+    * hideTreeLine - un valore booleano that controls whether to hide tree line styles. The default is false.
+    * hideIndentation - un valore booleano that controls whether to hide indentation. The default is false.
       Note that if this is set true, tree line style will not apply regardless of "hideTreeLine" setting.
-    * hideRepetitionNumber - a boolean that controls whether to hide repetition numbers next to the
+    * hideRepetitionNumber - un valore booleano that controls whether to hide repetition numbers next to the
       item's text. The default is false.
-    * displayScoreWithAnswerText  - a boolean that controls whether to display scores along 
+    * displayScoreWithAnswerText  - un valore booleano that controls whether to display scores along 
       with answer texts for answers that have scores. The default is true.
 * <a name="items"></a><b>items</b> - This is an array of form questions and
   sections.  Questions and sections (containing sub-questions) are mostly
@@ -198,7 +198,7 @@ about the meaning of each key:
         * YEAR - a string in the format of one to four digits that represents a year
         * MONTH - a string in the format of one or two digits that represents a month
         * DAY - a string in the format of one or two digits that represents a day
-        * URL - a string in a valid URL format
+        * URL - a string in una URL valida format
         * EMAIL - a string in a valid email format
         * PHONE - a string in a valid phone number format
         * NR - a numeric range, in the format of two values separated by "^".
@@ -257,7 +257,7 @@ about the meaning of each key:
           conditions are not met the question or section is disabled (and hidden).
         * logic - (optional) either "ANY" or "ALL".  If "ANY" is used, then any condition in
           "conditions" being met will trigger the action, while for "ALL" all
-          conditions must be met.  If not specified, the default is "ANY".
+          conditions deve essere met.  If not specified, the default is "ANY".
     * codingInstructions - (optional) a string of help text.  When this is
       present, a help button will appear next to the question, or if the "Show
       Help/Description" checkbox is used, the text will appear next to the
@@ -304,7 +304,7 @@ about the meaning of each key:
             * sourceType - optional, the source type. Currently only "INTERNAL" is supported. The
               default value is "INTERNAL".
             * sourceLinkId - the linkId of the source question in the form. The source question
-              must be a question on the form.
+              deve essere a question on the form.
         * onAttribute - optional, the attribute on this question, whose value will be updated by the newly
           constructed value. The default value is "value".
         * dataFormat - the format of the newly constructed value. It is a hash, such as
@@ -314,17 +314,17 @@ about the meaning of each key:
         * construction - the method to construct a new value based on the source question's value.
           It supports three types:
             * SIMPLE - the new value is a direct copy of what is on the controlling source question.
-              The **dataFormat**'s value must be string.
+              The **dataFormat**'s value deve essere string.
               For example, if it's value is `"value.STRENGTHS_AND_FORMS[0]"`,
               the new value could be `"325-2.25-0.19 mg Tab"`.
-            * OBJECT - the new value is a hash object. The **dataFormat**'s value must be a hash object.
+            * OBJECT - the new value is a hash object. The **dataFormat**'s value deve essere a hash object.
               For each key/value pair in the **dataFormat** hash object, the key is a key in the new hash object,
               and the value is from the controlling source question's value or its attributes.
               For example, if the **dataFormat** is `{"code": "value.code", "text": "value.GeneSymbol"}`,
               the new object could be created as `{"code": "NM_004315.5", "text": "ASAH1"}`, where "NM_004315.5"
               and "ASAH1" are values retrieved from the controlling source question for "value.code" and
               "value.GeneSymbol", respectively.
-            * ARRAY - the new value is an array. The **dataFormat**'s value must be a hash object.
+            * ARRAY - the new value is an array. The **dataFormat**'s value deve essere a hash object.
               Each element object in the array is constructed according to that hash object.
               It is similar to the processing for "OBJECT", except that for each key/value pair in the
               **dataFormat** hash object, the value contains an array.
@@ -342,9 +342,9 @@ about the meaning of each key:
 * **questionnaire** - A JSON object of a FHIR Questionnaire (including FHIR SDC Questionnaire),
  or the above LHC-Forms internal format.
 * **options** - Optional, a JSON object. The options defined in [templateOptions](#templateOptions).
-* **prepop** - Optional, a boolean value. A flag indicating whether to run the pre-populate operation
+* **prepop** - Optional, un valore booleano value. A flag indicating whether to run the pre-populate operation
  for the FHIR Questionnaire. The default value is false.
-* **fhirVersion** - Optional, a string value. The specified FHIR version of the data provided in 
+* **fhirVersion** - Optional, un valore di tipo stringa . The specified FHIR version of the data provided in 
  'questionnaire'. If this is not provided, a FHIR version will be determined from 
  the 'questionnaire'. The supported FHIR versions are 'R4' and 'STU3'.
 

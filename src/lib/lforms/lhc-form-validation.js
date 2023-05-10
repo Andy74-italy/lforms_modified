@@ -48,27 +48,29 @@ const Validation = {
     ""         // for header, no input field
   ],
 
+  // N.R. MODIFICATO PER ITALIANO
+
   _errorMessages : {
-    "BL": "must be a boolean (true/false).",     // not fully supported
-    "INT": "must be an integer number.",
-    "REAL": "must be a decimal number.",
-    "ST": "must be a string value.",      // not needed
-    "TX": "must be a text value.",        // not needed
-    "BIN": "must be a binary value.",     // not supported
-    "DT": "must be a date value.",        // not used, handled by lf-date directive
-    "DTM": "must be a date and time value.",  // not supported
-    "TM": "must be a time value.",
-    "CNE": "must be a value from the answer list.",  // not used, handled by the autocomplete-lhc directive
-    "CWE": "must be a value from the answer list or a user supplied value.", // not used, handled by the autocomplete-lhc directive
-    "RTO": "must be a ratio value.",          // not supported
-    "QTY": "must be a decimal number",
-    "NR": "must be two numeric values separated by a ^. One value can be omitted, but not the ^.",
-    "YEAR": "must be a numeric value of year.",
-    "MONTH": "must be a numeric value of month.",
-    "DAY": "must be a numeric value of day.",
-    "URL": "must be a valid URL.",
-    "EMAIL": "must be a valid email address.",
-    "PHONE": "must be a valid phone number."
+    "BL": "deve essere un valore booleano (vero/falso).",     // not fully supported
+    "INT": "deve essere un valore numerico intero.",
+    "REAL": "deve essere un valore decimale.",
+    "ST": "deve essere un valore di tipo stringa.",      // not needed
+    "TX": "deve essere un valore di tipo testo.",        // not needed
+    "BIN": "deve essere un file binari.",     // not supported
+    "DT": "deve essere una data valida.",        // not used, handled by lf-date directive
+    "DTM": "devono essere una data e un orario validi.",  // not supported
+    "TM": "deve essere un orario valido.",
+    "CNE": "deve essere un valore scelto dalla lista.",  // not used, handled by the autocomplete-lhc directive
+    "CWE": "deve essere un valore scelto della lista o indicato dall'utente.", // not used, handled by the autocomplete-lhc directive
+    "RTO": "deve essere a ratio value.",          // not supported
+    "QTY": "deve essere un valore decimale",
+    "NR": "devono essere due valori numerici separati da una ^. Un valore puo' essere omesso, ma non il ^.",
+    "YEAR": "deve essere un valore numerico che indichi l'anno.",
+    "MONTH": "deve essere un valore numerico che indichi il mese.",
+    "DAY": "deve essere un valore numerico che indichi il giorno.",
+    "URL": "deve essere una URL valida.",
+    "EMAIL": "deve essere un indirizzo email valido.",
+    "PHONE": "deve essere un numero di telefono valido."
   },
 
   /**
@@ -84,7 +86,7 @@ const Validation = {
         (value === undefined || value === null || value === '' ||
         (Array.isArray(value) && value.length ===0))) {
       ret = false;
-      errors.push("requires a value");
+      errors.push("valore obbligatorio");
     }
     return ret;
   },
@@ -187,7 +189,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value greater than " + keyValue + ".");
+              errors.push("deve essere un valore maggiore di  " + keyValue + ".");
             }
             break;
           case "minInclusive":
@@ -196,7 +198,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value greater than or equal to " + keyValue+ ".");
+              errors.push("deve essere un valore maggiore o uguale a " + keyValue+ ".");
             }
             break;
           case "maxExclusive":
@@ -205,7 +207,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value less than " + keyValue+ ".");
+              errors.push("deve essere un valore minore di " + keyValue+ ".");
             }
             break;
           case "maxInclusive":
@@ -214,7 +216,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must be a value less than or equal to " + keyValue+ ".");
+              errors.push("deve essere un valore minore o uguale a " + keyValue+ ".");
             }
             break;
           case "totalDigits":
@@ -229,7 +231,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length of " + keyValue+ ".");
+              errors.push("deve avere una dimensione totale di " + keyValue+ ".");
             }
             break;
           case "maxLength":
@@ -238,7 +240,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length less than or equal to " + keyValue+ ".");
+              errors.push("deve avere una dimensione minore o eguale a " + keyValue+ ".");
             }
             break;
           case "minLength":
@@ -247,7 +249,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must have a total length greater than or equal to " + keyValue+ ".");
+              errors.push("deve avere una dimensione maggiore o eguale a " + keyValue+ ".");
             }
             break;
           case "pattern":
@@ -270,7 +272,7 @@ const Validation = {
             }
             else {
               valid = false;
-              errors.push("must match a RegExp pattern of " + keyValue+ ".");
+              errors.push("deve corrispondere alla regola di validazione di " + keyValue+ ".");
             }
             break;
           default:

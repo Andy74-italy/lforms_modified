@@ -30,7 +30,7 @@ const CONSTANTS = {
     CWE: "CWE",
     NR: "NR",
     YEAR: "YEAR",
-    MONTH: "MONTH",
+    MONTH: "MOUNTH",
     DAY: "DAY",
     URL: "URL",
     EMAIL: "EMAIL",
@@ -41,6 +41,7 @@ const CONSTANTS = {
     BL: "BL"    // not fully supported yet
     // BIN:    "BIN",   // not supported yet
     // RTO:    "RTO",   // not supported yet
+    // N.R. MODIFICA ITALIANO
   },
   DISPLAY_MODE: ['lg', 'md', 'sm', 'auto']
 };

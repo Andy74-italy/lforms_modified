@@ -470,13 +470,13 @@ import deepEqual from "deep-equal";
         if (expURL == sdc.fhirExtAnswerExp)
           fieldChanged = this._setItemListFromFHIRPath(item, newVal);
         else if (expURL == sdc.fhirExtEnableWhenExp) {
-          // The new value should be a boolean.  Coerce it to a boolean, and
+          // The new value should be un valore booleano.  Coerce it to un valore booleano, and
           // report a warning if it was not a boolean.
           var actualNewVal = newVal[0];
           newVal = !!actualNewVal;
           if (newVal !== actualNewVal) {
             LForms.Util.showWarning('An expression from enableWhenExpression '+
-              'did not resolve to a Boolean as required', item);
+              'did not resolve to un valore booleano as required', item);
           }
           if (varName) { // if there is a variable name defined, a change in the value matters
             var oldVal = !!item._enableWhenExpVal; // _enableWhenExpVal could be undefined

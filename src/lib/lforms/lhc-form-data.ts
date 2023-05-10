@@ -1176,25 +1176,25 @@ export default class LhcFormData {
       else {
         switch (item.dataType) {
           case CONSTANTS.DATA_TYPE.DT:
-            item._placeholder = "MM/DD/YYYY";
+            item._placeholder = "DD/MM/YYYY";
             break;
           case CONSTANTS.DATA_TYPE.DTM:
-            item._placeholder = "MM/DD/YYYY HH:MM:SS";
+            item._placeholder = "DD/MM/YYYY HH:MM:SS";
             break;
           case CONSTANTS.DATA_TYPE.TM:
             item._placeholder = "HH:MM:SS";
             break;
           case CONSTANTS.DATA_TYPE.CNE:
             if (item.externallyDefined)
-              item._placeholder = item._multipleAnswers ? "Search for values" : "Search for value";
+              item._placeholder = item._multipleAnswers ? "Ricerca di valori" : "Ricerca di valore";
             else
-              item._placeholder = item._multipleAnswers ? "Select one or more" : "Select one";
+              item._placeholder = item._multipleAnswers ? "Selezionane uno o più" : "Selezionare uno";
             break;
           case CONSTANTS.DATA_TYPE.CWE:
             if (item.externallyDefined)
-              item._placeholder = item._multipleAnswers ? "Search for or type values" : "Search for or type a value";
+              item._placeholder = item._multipleAnswers ? "Cerca o digita i valori" : "Cerca o digita un valore";
             else
-              item._placeholder = item._multipleAnswers ? "Select one or more or type a value" : "Select one or type a value";
+              item._placeholder = item._multipleAnswers ? "Selezionane uno o più o digita un valore" : "Selezionane uno o digita un valore";
             break;
           case "SECTION":
           case "TITLE":
@@ -1204,10 +1204,10 @@ export default class LhcFormData {
           case CONSTANTS.DATA_TYPE.INT:
           case CONSTANTS.DATA_TYPE.REAL:
           case CONSTANTS.DATA_TYPE.QTY:
-            item._placeholder = "Type a number";
+            item._placeholder = "Digita un numero";
             break;
           default: {
-            item._placeholder = "Type a value";
+            item._placeholder = "Digita un valore";
           }
         }
       }
