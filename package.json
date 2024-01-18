@@ -26,7 +26,7 @@
     "build:fhir-dev": "webpack --config ./webpack.fhir.config.js --env fhirOnly=true --env debugging=true",
     "build:fhir": "webpack --config ./webpack.fhir.config.js --env fhirOnly=true",
     "build-dev": "npm run build:init && npm run build:fhir-dev && npm run build:lforms-dev && npm run build:prepare-zip && npm run build:zip",
-    "build": "npm run build:init && npm run build:fhir && npm run build:lforms && npm run build:prepare-zip && npm run build:zip",
+    "build": "npm run build:init && npm run build:fhir && npm run build:lforms && npm run build:prepare-zip",
     "build:clean": "shx rm -rf dist src/test/lib",
     "build:init": "npm run build:clean && shx mkdir -p dist/$npm_package_name && shx cp src/index.js dist",
     "build:prepare-zip": "node prepare-zip.js",
